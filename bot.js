@@ -16,7 +16,7 @@ const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 
 const GOOGLE_API_KEY = 'AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8';
 const youtube = new YouTube(GOOGLE_API_KEY);
-const PREFIX = '#';
+const PREFIX = '$';
 
 const queue = new Map();
 const client = new Discord.Client({disableEveryone: true}); 
@@ -115,7 +115,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل ",
         footer: {
-          text: " Starex System "
+          text: " Marex System "
         }
       }}).then(msg => {msg.delete(3000)});
                           }

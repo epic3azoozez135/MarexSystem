@@ -1636,7 +1636,7 @@ var prefix = "-";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
-    channel: "welcome"
+    channel: "marex"
 }
 const channel = sWlc[message.guild.id].channel
   if (message.content.startsWith(prefix + "setwelcomer")) {
@@ -1656,7 +1656,7 @@ client.on("guildMemberAdd", member => {
   }
   const channel = sWlc[member.guild.id].channel
     const sChannel = sWlc[member.guild.id].channel
-    let welcomer = member.guild.channels.find('name', sChannel);
+    let welcomer = member.guild.channels.find('marex', sChannel);
     let memberavatar = member.user.avatarURL
       if (!welcomer) return;
       if(welcomer) {

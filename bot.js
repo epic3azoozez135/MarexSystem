@@ -173,6 +173,7 @@ setTimeout(function(){
  
  
   }
+
 if(command === `unmute`) {
   if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.sendMessage("**ليس لديك صلاحية لفك عن الشخص ميوت**:x: ").then(m => m.delete(5000));
 if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**I Don't Have `MANAGE_ROLES` Permission**").then(msg => msg.delete(6000))
@@ -199,7 +200,7 @@ client.on('message', message => {
       const embed = new Discord.RichEmbed()
 
   .setColor("#FF0000")
-  .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
+  .addField('**سرعة أتصال الــبوت**' `${Date.now() - message.createdTimestamp}` + ' ms')
                  .setFooter(`Marex System ,
  .`, 'https://cdn.discordapp.com/avatars/349095859859881984/6a942bc4ff4d014a222dd91e1a6daa48.jpg?size=128')
 
@@ -291,22 +292,22 @@ __ Marex System __ By: - sR , عــزووووز#4888
 
 
 ╔[❖════════════❖]╗
-             Prefix = ' - '
+             Prefix = ' $ '
 ╚[❖════════════❖]╝
 
-❖-p  『تشغيل الاغاني』
+❖$p  『تشغيل الاغاني』
 
-❖-sk 『تخطي الاغاني』
+❖$sk 『تخطي الاغاني』
 
-❖-st  『إيقاف الاغاني』
+❖$st  『إيقاف الاغاني』
 
-❖-vol  『تحكم في درجة الصوت』
+❖$vol  『تحكم في درجة الصوت』
 
-❖-que『قائمة الانتظار من الأغاني』
+❖$que『قائمة الانتظار من الأغاني』
 
-❖-pau  『أيقاف الاغاني』
+❖$pau  『أيقاف الاغاني』
 
-❖-res  『تشغيل الاغاني』
+❖$res  『تشغيل الاغاني』
 
 ==================================================================
 

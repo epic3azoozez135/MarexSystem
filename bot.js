@@ -1680,4 +1680,61 @@ client.on("message", (message) => {
 
 
 
+client.on('message', message => {
+ 
+    if (message.content === "$mc") {
+                        if(!message.channel.guild) return message.reply(' This command only for servers');
+ 
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: false
+ 
+           }).then(() => {
+               message.reply("تم تقفيل الشات ✅ ")
+           });
+             }
+if (message.content === "$umc") {
+    if(!message.channel.guild) return message.reply(' This command only for servers');
+ 
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: true
+ 
+           }).then(() => {
+               message.reply("تم فتح الشات✅")
+           });
+             }
+ 
+
+
+client.on("message", message => {
+  let men = message.mentions.users.first();
+  if(message.content.startsWith(prefix + "vkick")) {
+    try {
+    if(!men) {
+      message.channel.send("**الرجاء اخيار شخص لطرده !**");
+      return;
+    }
+    if(!message.guild.member(men).voiceChannel) return message.channel.send("المراد طرده ليس في الغرف الصوتيه!");
+    if(!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send("ليست لديك صلاحيات سحب الاعضاء")
+    if(!message.guild.me.hasPermission("MOVE_MEMBERS")) return message.channel.send("ليست لدي الصلاحيه لسحب الاعضاء");
+       if(!message.guild.me.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ليست لدي الصلاحيات لانشاء رومات صوتيه")
+
+    message.guild.createChannel(" VKick", "voice").then(c => {
+      message.guild.member(men).setVoiceChannel(c.id)
+    setTimeout(() => {
+      c.delete()
+    }, 100)
+    });
+    message.channel.send(`**لقد تم طرده من الرومات الصوتيه \`\`${men.username}\`\`**`)
+} catch (e) {
+  message.channel.send("لا يمكنني القيام بذلك بسبب الصلاحيات او ما شابه");
+}
+  }
+});
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);

@@ -1922,5 +1922,18 @@ const prefix = '$'
     }
   });
 
+client.on('message', msg => {//msg
+    if (msg.content === '$االوان') {
+      msg.channel.send({file : "https://cdn.pg.sa/1c4R2LijPA.png"})
+    }
+  });
+
+client.on('message', msg => {//msg
+    if (msg.content === '$الالوان') {
+      msg.channel.send({file : "https://cdn.pg.sa/1c4R2LijPA.png"})
+    }
+  });
+
+
 
 client.login(process.env.BOT_TOKEN);

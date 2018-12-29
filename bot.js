@@ -2033,7 +2033,7 @@ client.on('message', message => {
  
   var moment = require('moment');
  
-  var prefix = "#"
+  var prefix = "$"
    
   if (message.author.x5bz) return;
  

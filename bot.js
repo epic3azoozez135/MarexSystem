@@ -2185,12 +2185,6 @@ client.on("message", (message) => {
 
 
 
-
-
-
-
-
-
 client.on("message", message => {
     var prefix = "$"
     if (!message.content.startsWith(prefix)) return;
@@ -2203,6 +2197,26 @@ client.on("message", message => {
     message.channel.send(image)
         }
     });
+
+
+
+client.on('message', function(message) {
+                if(!message.channel.guild) return;
+            if(!message.member.hasPermission('ADMINISTRATOR'))
+        if(message.content.includes('discord.gg')){
+     message.member.addRole(message.guild.roles.find('name', 'Muted')); 
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("❌ | تمت معاقبتك")
+       .addField(`** لقد قمت بمخالفة قوانين السيرفر من خلال نشر سيرفرات اخرى  **` , `**ملاحظة  : إن كآن هذآ الميوت عن طريق الخطأ تكلم مع الادآرة**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL) 
+        .setFooter(`${message.guild.name} Server`)
+     message.channel.send(embed500) 
+    
+        
+    }
+});
 
 
 

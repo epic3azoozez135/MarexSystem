@@ -13,6 +13,7 @@ const moment = require('moment');
 const r1 = require('snekfetch'); const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4"; 
+const fs = require('fs')
 
 const GOOGLE_API_KEY = 'AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8';
 const youtube = new YouTube(GOOGLE_API_KEY);
